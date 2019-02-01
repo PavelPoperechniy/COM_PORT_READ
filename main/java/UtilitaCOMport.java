@@ -4,6 +4,7 @@ import gnu.io.SerialPort;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 
 public class UtilitaCOMport {
     private SerialPort serialPort;
@@ -45,10 +46,9 @@ public class UtilitaCOMport {
         int bytes = 0;
         String s;
         while ((bytes = inputStream.read(buffer)) > 0) {
-            System.out.print(new String(buffer, 0, bytes));
+            System.out.print(new String(buffer, 0, bytes, "UTF-8"));
 
         }
-
 
     }
 
